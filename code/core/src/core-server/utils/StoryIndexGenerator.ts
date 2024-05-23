@@ -359,7 +359,6 @@ export class StoryIndexGenerator {
           name,
           title,
           importPath,
-          componentPath,
           tags,
         };
       });
@@ -450,7 +449,7 @@ export class StoryIndexGenerator {
         invariant(
           csfEntry,
           dedent`Could not find or load CSF file at path "${result.of}" referenced by \`of={}\` in docs file "${relativePath}".
-            
+
         - Does that file exist?
         - If so, is it a CSF file (\`.stories.*\`)?
         - If so, is it matched by the \`stories\` glob in \`main.js\`?
@@ -722,15 +721,15 @@ export class StoryIndexGenerator {
       } catch (err) {
         once.warn(dedent`
           Unable to parse tags from project configuration. If defined, tags should be specified inline, e.g.
-      
+
           export default {
             tags: ['foo'],
           }
-      
+
           ---
-      
+
           Received:
-      
+
           ${previewCode}
         `);
       }
