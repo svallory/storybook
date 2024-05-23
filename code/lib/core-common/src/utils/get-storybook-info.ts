@@ -11,6 +11,7 @@ export const rendererPackages: Record<string, string> = {
   '@storybook/web-components': 'web-components',
   '@storybook/polymer': 'polymer',
   '@storybook/ember': 'ember',
+  '@storybook/marko': 'marko',
   '@storybook/svelte': 'svelte',
   '@storybook/preact': 'preact',
   '@storybook/server': 'server',
@@ -28,6 +29,7 @@ export const rendererPackages: Record<string, string> = {
 export const frameworkPackages: Record<string, SupportedFrameworks> = {
   '@storybook/angular': 'angular',
   '@storybook/ember': 'ember',
+  '@storybook/marko-vite': 'marko-vite',
   '@storybook/html-vite': 'html-vite',
   '@storybook/html-webpack5': 'html-webpack5',
   '@storybook/nextjs': 'nextjs',

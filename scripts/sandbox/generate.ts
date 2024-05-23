@@ -86,7 +86,7 @@ const addStorybook = async ({
   try {
     await copy(beforeDir, tmpDir);
 
-    const packageManager = JsPackageManagerFactory.getPackageManager({ force: 'yarn1' }, tmpDir);
+    const packageManager = JsPackageManagerFactory.getPackageManager({}, tmpDir);
     if (localRegistry) {
       await withLocalRegistry(packageManager, async () => {
         await packageManager.addPackageResolutions({
@@ -95,10 +95,12 @@ const addStorybook = async ({
           jackspeak: '2.1.1',
         });
 
-        await sbInit(tmpDir, env, [...flags, '--package-manager=yarn1'], debug);
+        // await sbInit(tmpDir, env, [...flags, '--package-manager=yarn1'], debug);
+        await sbInit(tmpDir, env, flags, debug);
       });
     } else {
-      await sbInit(tmpDir, env, [...flags, '--package-manager=yarn1'], debug);
+      // await sbInit(tmpDir, env, [...flags, '--package-manager=yarn1'], debug);
+      await sbInit(tmpDir, env, flags, debug);
     }
   } catch (e) {
     await remove(tmpDir);

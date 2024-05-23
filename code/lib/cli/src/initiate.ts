@@ -30,6 +30,7 @@ import nextjsGenerator from './generators/NEXTJS';
 import vue3Generator from './generators/VUE3';
 import webpackReactGenerator from './generators/WEBPACK_REACT';
 import htmlGenerator from './generators/HTML';
+import markoGenerator from './generators/MARKO';
 import webComponentsGenerator from './generators/WEB-COMPONENTS';
 import preactGenerator from './generators/PREACT';
 import svelteGenerator from './generators/SVELTE';
@@ -115,6 +116,11 @@ const installStorybook = async <Project extends ProjectType>(
 
       case ProjectType.EMBER:
         return emberGenerator(packageManager, npmOptions, generatorOptions).then(
+          commandLog('Adding Storybook support to your "Ember" app')
+        );
+
+      case ProjectType.MARKO:
+        return markoGenerator(packageManager, npmOptions, generatorOptions).then(
           commandLog('Adding Storybook support to your "Ember" app')
         );
 
@@ -254,7 +260,7 @@ export async function doInitiate(options: CommandOptions): Promise<
       This version is behind the latest release, which is: ${chalk.bold(latestVersion)}!
       You likely ran the init command through npx, which can use a locally cached version, to get the latest please run:
       ${chalk.bold('npx storybook@latest init')}
-      
+
       You may want to CTRL+C to stop, and run with the latest version instead.
     `),
     prelease: chalk.yellow('This is a pre-release version.'),
@@ -358,14 +364,14 @@ export async function doInitiate(options: CommandOptions): Promise<
       To run Storybook, you will need to:
 
       1. Replace the contents of your app entry with the following
-      
+
       ${chalk.inverse(' ' + "export {default} from './.storybook';" + ' ')}
-      
+
       2. Enable transformer.unstable_allowRequireContext in your metro config
-      
+
       For a more detailed guide go to:
       ${chalk.cyan('https://github.com/storybookjs/react-native#existing-project')}
-      
+
       Then to run your Storybook, type:
 
       ${chalk.inverse(' ' + packageManager.getRunCommand('start') + ' ')}
@@ -396,7 +402,7 @@ export async function doInitiate(options: CommandOptions): Promise<
           To run Storybook manually, run ${chalk.yellow(
             chalk.bold(storybookCommand)
           )}. CTRL+C to stop.
-          
+
           Wanna know more about Storybook? Check out ${chalk.cyan('https://storybook.js.org/')}
           Having trouble or want to chat? Join us at ${chalk.cyan('https://discord.gg/storybook/')}
         `,

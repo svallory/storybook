@@ -1,4 +1,5 @@
 import type { StorybookConfigRaw } from '@storybook/types';
+import dedent from 'ts-dedent';
 
 export type SkippableTask =
   | 'smoke-test'
@@ -523,6 +524,24 @@ const baseTemplates = {
       builder: '@storybook/builder-webpack5',
     },
   },
+  'marko/default-ts': {
+    name: 'Marko v5 (Vite | TypeScript)',
+    script: `npx degit svallory/marko-storybook-8 {{beforeDir}} && rm -f {{beforeDir}}/package-lock.json`,
+    inDevelopment: true,
+    expected: {
+      framework: '@storybook/marko-vite',
+      renderer: '@storybook/marko',
+      builder: '@storybook/builder-vite',
+    },
+    skipTasks: [
+      'bench',
+      'e2e-tests-dev',
+      'test-runner',
+      'test-runner-dev',
+      'e2e-tests',
+      'chromatic',
+    ],
+  },
 } satisfies Record<string, BaseTemplates>;
 
 /**
@@ -653,6 +672,7 @@ export const normal: TemplateKey[] = [
   'bench/react-vite-default-ts-test-build',
   'bench/react-webpack-18-ts-test-build',
   'ember/default-js',
+  'marko-vite/default-ts',
 ];
 
 export const merged: TemplateKey[] = [
