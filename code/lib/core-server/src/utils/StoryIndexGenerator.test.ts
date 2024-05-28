@@ -78,7 +78,7 @@ describe('StoryIndexGenerator', () => {
             "entries": {
               "a--story-one": {
                 "id": "a--story-one",
-                "importPath": "${path.join(workingDir, './src/A.stories.js')}",
+                "importPath": "'./src/A.stories.js'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -110,7 +110,7 @@ describe('StoryIndexGenerator', () => {
             "entries": {
               "f--story-one": {
                 "id": "f--story-one",
-                "importPath": "${path.join(workingDir, './src/F.story.ts')}",
+                "importPath": "'./src/F.story.ts'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -141,7 +141,7 @@ describe('StoryIndexGenerator', () => {
             "entries": {
               "stories--story-one": {
                 "id": "stories--story-one",
-                "importPath": "${path.join(workingDir, './src/stories.ts')}",
+                "importPath": "'./src/stories.ts'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -172,7 +172,7 @@ describe('StoryIndexGenerator', () => {
             "entries": {
               "nested-button--story-one": {
                 "id": "nested-button--story-one",
-                "importPath": "${path.join(workingDir, './src/nested/Button.stories.ts')}",
+                "importPath": "'./src/nested/Button.stories.ts'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -184,7 +184,7 @@ describe('StoryIndexGenerator', () => {
               },
               "second-nested-g--story-one": {
                 "id": "second-nested-g--story-one",
-                "importPath": "${path.join(workingDir, './src/second-nested/G.stories.ts')}",
+                "importPath": "'./src/second-nested/G.stories.ts'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -214,7 +214,7 @@ describe('StoryIndexGenerator', () => {
             "entries": {
               "a--story-one": {
                 "id": "a--story-one",
-                "importPath": "${path.join(workingDir, './src/A.stories.js')}",
+                "importPath": "'./src/A.stories.js'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -227,7 +227,7 @@ describe('StoryIndexGenerator', () => {
               },
               "b--story-one": {
                 "id": "b--story-one",
-                "importPath": "${path.join(workingDir, './src/B.stories.ts')}",
+                "importPath": "'./src/B.stories.ts'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -239,7 +239,7 @@ describe('StoryIndexGenerator', () => {
               },
               "d--story-one": {
                 "id": "d--story-one",
-                "importPath": "${path.join(workingDir, './src/D.stories.jsx')}",
+                "importPath": "'./src/D.stories.jsx'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -251,7 +251,7 @@ describe('StoryIndexGenerator', () => {
               },
               "first-nested-deeply-f--story-one": {
                 "id": "first-nested-deeply-f--story-one",
-                "importPath": "${path.join(workingDir, './src/first-nested/deeply/F.stories.js')}",
+                "importPath": "'./src/first-nested/deeply/F.stories.js'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -262,7 +262,7 @@ describe('StoryIndexGenerator', () => {
               },
               "h--story-one": {
                 "id": "h--story-one",
-                "importPath": "${path.join(workingDir, './src/H.stories.mjs')}",
+                "importPath": "'./src/H.stories.mjs'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -274,7 +274,7 @@ describe('StoryIndexGenerator', () => {
               },
               "nested-button--story-one": {
                 "id": "nested-button--story-one",
-                "importPath": "${path.join(workingDir, './src/nested/Button.stories.ts')}",
+                "importPath": "'./src/nested/Button.stories.ts'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -286,7 +286,7 @@ describe('StoryIndexGenerator', () => {
               },
               "second-nested-g--story-one": {
                 "id": "second-nested-g--story-one",
-                "importPath": "${path.join(workingDir, './src/second-nested/G.stories.ts')}",
+                "importPath": "'./src/second-nested/G.stories.ts'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -321,7 +321,7 @@ describe('StoryIndexGenerator', () => {
             "entries": {
               "a--story-one": {
                 "id": "a--story-one",
-                "importPath": "${path.join(workingDir, './src/A.stories.js')}",
+                "importPath": "'./src/A.stories.js'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -347,7 +347,7 @@ describe('StoryIndexGenerator', () => {
               },
               "b--story-one": {
                 "id": "b--story-one",
-                "importPath": "${path.join(workingDir, './src/B.stories.ts')}",
+                "importPath": "'./src/B.stories.ts'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -372,7 +372,7 @@ describe('StoryIndexGenerator', () => {
               },
               "d--story-one": {
                 "id": "d--story-one",
-                "importPath": "${path.join(workingDir, './src/D.stories.jsx')}",
+                "importPath": "'./src/D.stories.jsx'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -384,7 +384,7 @@ describe('StoryIndexGenerator', () => {
               },
               "first-nested-deeply-f--story-one": {
                 "id": "first-nested-deeply-f--story-one",
-                "importPath": "${path.join(workingDir, './src/first-nested/deeply/F.stories.js')}",
+                "importPath": "'./src/first-nested/deeply/F.stories.js'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -408,7 +408,7 @@ describe('StoryIndexGenerator', () => {
               },
               "h--story-one": {
                 "id": "h--story-one",
-                "importPath": "${path.join(workingDir, './src/H.stories.mjs')}",
+                "importPath": "'./src/H.stories.mjs'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -420,7 +420,7 @@ describe('StoryIndexGenerator', () => {
               },
               "nested-button--story-one": {
                 "id": "nested-button--story-one",
-                "importPath": "${path.join(workingDir, './src/nested/Button.stories.ts')}",
+                "importPath": "'./src/nested/Button.stories.ts'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -432,7 +432,7 @@ describe('StoryIndexGenerator', () => {
               },
               "second-nested-g--story-one": {
                 "id": "second-nested-g--story-one",
-                "importPath": "${path.join(workingDir, './src/second-nested/G.stories.ts')}",
+                "importPath": "'./src/second-nested/G.stories.ts'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -584,7 +584,7 @@ describe('StoryIndexGenerator', () => {
               },
               "b--story-one": {
                 "id": "b--story-one",
-                "importPath": "${path.join(workingDir, './src/B.stories.ts')}",
+                "importPath": "'./src/B.stories.ts'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -647,7 +647,7 @@ describe('StoryIndexGenerator', () => {
               },
               "b--story-one": {
                 "id": "b--story-one",
-                "importPath": "${path.join(workingDir, './src/B.stories.ts')}",
+                "importPath": "'./src/B.stories.ts'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -703,7 +703,7 @@ describe('StoryIndexGenerator', () => {
               },
               "a--story-one": {
                 "id": "a--story-one",
-                "importPath": "${path.join(workingDir, './src/A.stories.js')}",
+                "importPath": "'./src/A.stories.js'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -750,7 +750,7 @@ describe('StoryIndexGenerator', () => {
               },
               "duplicate-a--story-one": {
                 "id": "duplicate-a--story-one",
-                "importPath": "${path.join(workingDir, './duplicate/A.stories.js')}",
+                "importPath": "'./duplicate/A.stories.js'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -762,7 +762,7 @@ describe('StoryIndexGenerator', () => {
               },
               "duplicate-a--story-two": {
                 "id": "duplicate-a--story-two",
-                "importPath": "${path.join(workingDir, './duplicate/SecondA.stories.js')}",
+                "importPath": "'./duplicate/SecondA.stories.js'",
                 "name": "Story Two",
                 "tags": [
                   "dev",
@@ -823,7 +823,7 @@ describe('StoryIndexGenerator', () => {
               },
               "my-component-a--story-one": {
                 "id": "my-component-a--story-one",
-                "importPath": "${path.join(workingDir, './docs-id-generation/A.stories.jsx')}",
+                "importPath": "'./docs-id-generation/A.stories.jsx'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -853,7 +853,7 @@ describe('StoryIndexGenerator', () => {
                 "importPath": "./src/docs2/MetaOf.mdx",
                 "name": "MetaOf",
                 "storiesImports": [
-                  "${path.join(workingDir, './src/A.stories.js')}",
+                  "'./src/A.stories.js'",
                 ],
                 "tags": [
                   "dev",
@@ -870,7 +870,7 @@ describe('StoryIndexGenerator', () => {
                 "importPath": "./src/docs2/SecondMetaOf.mdx",
                 "name": "Second Docs",
                 "storiesImports": [
-                  "${path.join(workingDir, './src/A.stories.js')}",
+                  "'./src/A.stories.js'",
                 ],
                 "tags": [
                   "dev",
@@ -884,7 +884,7 @@ describe('StoryIndexGenerator', () => {
               },
               "a--story-one": {
                 "id": "a--story-one",
-                "importPath": "${path.join(workingDir, './src/A.stories.js')}",
+                "importPath": "'./src/A.stories.js'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -986,7 +986,7 @@ describe('StoryIndexGenerator', () => {
                 "importPath": "./src/docs2/MetaOf.mdx",
                 "name": "MetaOf",
                 "storiesImports": [
-                  "${path.join(workingDir, './src/A.stories.js')}",
+                  "'./src/A.stories.js'",
                 ],
                 "tags": [
                   "dev",
@@ -1003,7 +1003,7 @@ describe('StoryIndexGenerator', () => {
                 "importPath": "./src/docs2/SecondMetaOf.mdx",
                 "name": "Second Docs",
                 "storiesImports": [
-                  "${path.join(workingDir, './src/A.stories.js')}",
+                  "'./src/A.stories.js'",
                 ],
                 "tags": [
                   "dev",
@@ -1017,7 +1017,7 @@ describe('StoryIndexGenerator', () => {
               },
               "a--story-one": {
                 "id": "a--story-one",
-                "importPath": "${path.join(workingDir, './src/A.stories.js')}",
+                "importPath": "'./src/A.stories.js'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -1088,7 +1088,7 @@ describe('StoryIndexGenerator', () => {
             "entries": {
               "a--story-one": {
                 "id": "a--story-one",
-                "importPath": "${path.join(workingDir, './src/A.stories.js')}",
+                "importPath": "'./src/A.stories.js'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -1101,7 +1101,7 @@ describe('StoryIndexGenerator', () => {
               },
               "b--story-one": {
                 "id": "b--story-one",
-                "importPath": "${path.join(workingDir, './src/B.stories.ts')}",
+                "importPath": "'./src/B.stories.ts'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -1116,8 +1116,8 @@ describe('StoryIndexGenerator', () => {
                 "importPath": "./complex/TwoStoryReferences.mdx",
                 "name": "TwoStoryReferences",
                 "storiesImports": [
-                  "${path.join(workingDir, './src/B.stories.ts')}",
-                  "${path.join(workingDir, './src/A.stories.js')}",
+                  "'./src/B.stories.ts'",
+                  "'./src/A.stories.js'",
                 ],
                 "tags": [
                   "dev",
@@ -1156,7 +1156,7 @@ describe('StoryIndexGenerator', () => {
                 "importPath": "./docs-id-generation/B.docs.mdx",
                 "name": "docs",
                 "storiesImports": [
-                  "${path.join(workingDir, './docs-id-generation/B.stories.jsx')}",
+                  "'./docs-id-generation/B.stories.jsx'",
                 ],
                 "tags": [
                   "dev",
@@ -1168,7 +1168,7 @@ describe('StoryIndexGenerator', () => {
               },
               "my-component-b--story-one": {
                 "id": "my-component-b--story-one",
-                "importPath": "${path.join(workingDir, './docs-id-generation/B.stories.jsx')}",
+                "importPath": "'./docs-id-generation/B.stories.jsx'",
                 "name": "Story One",
                 "tags": [
                   "dev",
@@ -1266,7 +1266,7 @@ describe('StoryIndexGenerator', () => {
         await generator.initialize();
 
         await expect(generator.getIndex()).rejects.toThrowErrorMatchingInlineSnapshot(
-          `[Error: Unable to index ${path.join(workingDir, './src/A.stories.js')},./errors/A.mdx]`
+          `[Error: Unable to index './src/A.stories.js',./errors/A.mdx]`
         );
       });
       it('errors when two duplicate stories exists, with duplicated entries details', async () => {
