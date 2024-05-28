@@ -5,6 +5,7 @@ export type SupportedRenderers =
   | 'vue3'
   | 'angular'
   | 'ember'
+  | 'marko'
   | 'preact'
   | 'svelte'
   | 'qwik'

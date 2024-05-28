@@ -5,6 +5,7 @@ export type SupportedFrameworks =
   | 'ember'
   | 'html-vite'
   | 'html-webpack5'
+  | 'marko-vite'
   | 'nextjs'
   | 'preact-vite'
   | 'preact-webpack5'

@@ -21,7 +21,8 @@
       "builders/*",
       "ui/*",
       "presets/*",
-      "renderers/*"
+      "renderers/*",
+      "marko/packages/*/*"
     ]
   },
   "scripts": {
@@ -44,6 +45,7 @@
     "lint:other": "prettier --write '**/*.{css,html,json,md,yml}'",
     "lint:package": "sort-package-json",
     "local-registry": "yarn --cwd ../scripts local-registry",
+    "postinstall": "git submodule update --init --recursive",
     "publish-sandboxes": "yarn --cwd ../scripts publish",
     "storybook:blocks": "STORYBOOK_BLOCKS_ONLY=true yarn storybook:ui",
     "storybook:blocks:build": "STORYBOOK_BLOCKS_ONLY=true yarn storybook:ui:build",
@@ -141,6 +143,9 @@
     "@storybook/linter-config": "^4.0.0",
     "@storybook/manager": "workspace:*",
     "@storybook/manager-api": "workspace:*",
+    "@storybook/marko": "workspace:*",
+    "@storybook/marko-vite": "workspace:*",
+    "@storybook/marko-webpack": "workspace:*",
     "@storybook/nextjs": "workspace:*",
     "@storybook/node-logger": "workspace:*",
     "@storybook/preact": "workspace:*",

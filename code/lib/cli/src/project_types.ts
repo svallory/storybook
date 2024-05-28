@@ -36,6 +36,7 @@ export const SUPPORTED_RENDERERS: SupportedRenderers[] = [
   'vue3',
   'angular',
   'ember',
+  'marko',
   'preact',
   'svelte',
   'qwik',
@@ -63,6 +64,7 @@ export enum ProjectType {
   SERVER = 'SERVER',
   NX = 'NX',
   SOLID = 'SOLID',
+  MARKO = 'MARKO',
 }
 
 export enum CoreBuilder {
