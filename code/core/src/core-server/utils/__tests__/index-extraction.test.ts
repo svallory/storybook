@@ -132,6 +132,47 @@ describe('story extraction', () => {
     `);
   });
 
+  it('leaves virtual paths returned by indexers as is', async () => {
+    const relativePath = './src/first-nested/deeply/F.stories.js';
+    const absolutePath = path.join(options.workingDir, relativePath);
+    const specifier: NormalizedStoriesSpecifier = normalizeStoriesEntry(relativePath, options);
+
+    const generator = new StoryIndexGenerator([specifier], {
+      ...options,
+      indexers: [
+        {
+          test: /\.stories\.(m?js|ts)x?$/,
+          createIndex: async (fileName) => [
+            {
+              exportName: 'StoryOne',
+              type: 'story',
+              // importPath: "virtual:custom-indexer",
+            },
+          ],
+        },
+      ],
+    });
+    const result = await generator.extractStories(specifier, absolutePath);
+
+    expect(result).toMatchInlineSnapshot(`
+      {
+        "dependents": [],
+        "entries": [
+          {
+            "id": "f--story-one",
+            "importPath": "virtual:custom-indexer",
+            "metaId": undefined,
+            "name": "Story One",
+            "tags": [],
+            "title": "F",
+            "type": "story",
+          },
+        ],
+        "type": "stories",
+      }
+    `);
+  });
+
   it('auto-generates title from indexer inputs without title', async () => {
     const relativePath = './src/first-nested/deeply/F.stories.js';
     const absolutePath = path.join(options.workingDir, relativePath);

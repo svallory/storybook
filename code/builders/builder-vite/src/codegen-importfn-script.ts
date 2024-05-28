@@ -1,7 +1,6 @@
 import * as path from 'path';
 
 import type { Options } from '@storybook/types';
-import { logger } from '@storybook/node-logger';
 
 import { listStories } from './list-stories';
 
@@ -15,7 +14,7 @@ import { listStories } from './list-stories';
  * We want to deal in importPaths relative to the working dir, so we normalize
  */
 function toImportPath(relativePath: string) {
-  return relativePath.startsWith('../') ? relativePath : `./${relativePath}`;
+  return /\.\.\/|virtual:/.test(relativePath) ? relativePath : `./${relativePath}`;
 }
 
 /**
@@ -25,24 +24,12 @@ function toImportPath(relativePath: string) {
  * function and this is called by Storybook to fetch a story dynamically when needed.
  * @param stories An array of absolute story paths.
  */
-async function toImportFn(stories: string[], indexersMatchers: RegExp[]) {
+async function toImportFn(stories: string[]) {
   const { normalizePath } = await import('vite');
   const objectEntries = stories.map((file) => {
     const relativePath = normalizePath(path.relative(process.cwd(), file));
 
-    if (
-      !['.js', '.jsx', '.ts', '.tsx', '.mdx', '.svelte', '.vue'].includes(ext) &&
-      !indexersMatchers.some((m) => m.test(file))
-    ) {
-      logger.warn(
-        `Cannot process ${ext} file with storyStoreV7: ${relativePath}. No indexer found that can handle this file type.`
-      );
-    }
-
-    return [
-      `  '${toImportPath(relativePath)}': async () => import('/@fs/${file}'),`,
-      `  '${file}': async () => import('/@fs/${file}')`,
-    ].join('\n');
+    return `  '${toImportPath(relativePath)}': async () => import('/@fs/${file}')`;
   });
 
   return `
@@ -51,12 +38,12 @@ async function toImportFn(stories: string[], indexersMatchers: RegExp[]) {
     };
 
     export async function importFn(path) {
-      if (/^\0?virtual:/.test(path)) {
+      if (/^virtual:/.test(path)) {
         return import(/* @vite-ignore */ '/' + path);
       }
 
       if (!(path in importers)) {
-        throw new Error(\`No importer defined for "\${path}". Existing importers: \${Object.keys(importers)}\`);
+        throw new Error(\`Storybook generated import script does no have an importer for "\${path}". Existing importers: \${Object.keys(importers)}\`);
       }
 
       return importers[path]();
@@ -68,9 +55,6 @@ export async function generateImportFnScriptCode(options: Options) {
   // First we need to get an array of stories and their absolute paths.
   const stories = await listStories(options);
 
-  const indexers = await options.presets.apply('experimental_indexers', []);
-  const matchers: RegExp[] = indexers?.map((i) => i.test) || [];
-
   // We can then call toImportFn to create a function that can be used to load each story dynamically.
-  return (await toImportFn(stories, matchers)).trim();
+  return (await toImportFn(stories)).trim();
 }
